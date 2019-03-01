@@ -1,0 +1,203 @@
+2019-02-23 10:41:54,852|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:41:54,863|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:43:23,616|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:43:23,627|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:43:32,551|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:43:32,562|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:43:32,563|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:43:32,563|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:43:32,563|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:43:44,763|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:43:44,766|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:43:44,766|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:43:59,916|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:43:59,919|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:43:59,919|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:48:19,696|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:48:19,708|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:48:19,708|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:48:19,714|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:48:19,714|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:48:19,714|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:48:45,438|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:48:45,450|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:48:45,450|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:48:45,456|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:48:45,457|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:48:45,457|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:48:54,375|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:48:54,388|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:48:54,388|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:48:54,394|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:48:54,395|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:48:54,395|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:50:44,535|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:50:44,547|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:50:44,547|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:50:44,552|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:50:44,553|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:50:44,553|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:51:09,918|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:51:09,931|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:51:09,931|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 10:51:09,938|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 10:51:09,938|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 10:51:09,938|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 12:15:51,576|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 12:15:51,590|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 12:15:51,591|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 12:15:51,591|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 12:15:51,597|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 12:15:51,598|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 12:15:51,598|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 12:15:51,598|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 12:16:10,446|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 12:16:10,458|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 12:16:10,459|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 12:16:10,459|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 12:16:10,465|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 12:16:10,465|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 12:16:10,465|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 12:16:10,465|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 12:16:10,466|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 12:16:10,466|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 12:16:10,466|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 12:16:10,466|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:00:28,373|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:00:28,385|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:00:28,385|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:00:28,385|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:00:28,391|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:00:28,392|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:00:28,392|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:00:28,392|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:00:28,393|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:00:28,393|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:00:28,393|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:00:28,393|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:00:51,467|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:00:51,485|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:00:51,486|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:31,243|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:02:31,259|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:02:31,260|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:31,260|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:02:31,266|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:02:31,266|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:02:31,266|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:31,266|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:02:31,267|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:02:31,267|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:02:31,267|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:31,268|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:02:40,996|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:02:41,008|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:02:41,008|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:41,009|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:02:41,014|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:02:41,015|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:02:41,015|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:41,015|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:02:41,016|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:02:41,016|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:02:41,016|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:41,016|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:02:52,100|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:02:52,113|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:02:52,113|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:52,113|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:02:52,119|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:02:52,120|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:02:52,120|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:52,120|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:02:52,121|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:02:52,121|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:02:52,121|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:02:52,121|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [null]
+2019-02-23 17:02:52,131|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [com.mysql.jdbc.Driver]
+2019-02-23 17:02:52,133|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [com.mysql.jdbc.Driver]
+2019-02-23 17:03:07,496|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [com.mysql.jdbc.Driver]
+2019-02-23 17:07:39,890|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [com.mysql.jdbc.Driver]
+2019-02-23 17:11:47,208|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [No suitable driver found for 192.168.1.8:3306]
+2019-02-23 17:11:47,218|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [No suitable driver found for 192.168.1.8:3306]
+2019-02-23 17:12:12,427|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [No suitable driver found for 192.168.1.8:3306]
+2019-02-23 17:14:07,381|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [No suitable driver found for 192.168.1.8:3306]
+2019-02-23 17:16:07,463|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:17:21,518|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:17:34,236|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:17:42,545|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:17:55,255|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:21:07,995|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:21:18,313|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:21:29,023|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:21:39,333|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:22:45,459|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:23:06,465|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:23:27,493|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:23:48,495|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:24:48,036|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:25:09,043|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:25:25,662|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:25:35,670|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:34:56,654|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:34:56,666|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:34:56,667|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:34:56,672|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:34:56,673|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:34:56,673|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:34:56,677|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-02-23 17:34:56,677|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-02-23 17:34:56,678|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 17:34:56,679|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 17:34:56,679|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 17:35:17,775|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 17:35:38,781|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+2019-02-23 19:44:03,570|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 19:44:03,582|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 19:44:03,582|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 19:44:03,588|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 19:44:03,588|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 19:44:03,589|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-23 19:44:03,592|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-02-23 19:44:03,592|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-02-23 19:44:03,593|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-23 19:44:03,594|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-23 19:44:03,594|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]

@@ -1,0 +1,11 @@
+2019-02-25 10:27:32,370|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-25 10:27:32,373|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-25 10:27:32,373|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-25 10:27:32,376|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-02-25 10:27:32,376|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-02-25 10:27:32,377|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-02-25 10:27:32,381|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-02-25 10:27:32,381|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-02-25 10:27:32,564|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get offers [Table 'mercury.tbOffers' doesn't exist]
+2019-02-25 10:36:30,360|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to save delivery details ({"address":"Some address","deliveryDate":{"seconds":1551062190,"nanos":184000000},"deliveryType":1}) [Data truncation: Incorrect datetime value: '2019-02-25T02:36:30.184Z' for column 'delivery_date' at row 1]
+2019-02-25 10:38:00,781|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to save delivery details ({"address":"Some address","deliveryDate":{"seconds":1551062280,"nanos":589000000},"deliveryType":1}) [Data truncation: Incorrect datetime value: '1551062280' for column 'delivery_date' at row 1]

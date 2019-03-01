@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<username>mercury_system</username>
+	<password>x9Wu3ndASu30nhXskWpD</password>
+	<server>jdbc:mysql://192.168.1.8:3306/mercury</server>
+</config>
