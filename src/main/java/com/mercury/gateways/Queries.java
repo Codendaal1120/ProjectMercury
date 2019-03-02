@@ -12,6 +12,7 @@ public final class Queries {
 	
 	public final class DeliveryDetails{
 		public final static String saveDeliveryDetails = "INSERT INTO tbDeliveryDetails (delivery_type, address, delivery_date) VALUES (?, ?, ?);";
+		public final static String getDeliveryDetailsById = "SELECT id, delivery_type, address, delivery_date FROM tbDeliveryDetails WHERE id = ?";
 	}
 	
 }

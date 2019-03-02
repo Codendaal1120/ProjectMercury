@@ -10,6 +10,8 @@ public class DeliveryDetails {
 		public static final int PICKUP = 2;		
 	}	
 	
+	public long id;
+
 	private String address;
 	private LocalDate deliveryDate;
 	private int deliveryType;

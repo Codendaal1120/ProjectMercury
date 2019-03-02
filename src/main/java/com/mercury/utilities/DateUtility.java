@@ -9,6 +9,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtility {
+	public static final String sqlDateFormat = "yyyy-MM-dd HH:mm:ss";
+
 	public static Date addDaysToDate(Date date, int days) {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
@@ -40,5 +42,12 @@ public class DateUtility {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format).withZone(ZoneOffset.UTC);		
 		return date.format(formatter);
 	}	
+
+	public static LocalDate StringToDate(String date, String format) {
+		DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern( format );
+		return LocalDate.parse(date, dateTimeFormat);
+	}
+
+	
 
 }

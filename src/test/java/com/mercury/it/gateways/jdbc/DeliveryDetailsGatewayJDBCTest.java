@@ -1,5 +1,6 @@
 package com.mercury.it.gateways.jdbc;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
@@ -24,4 +25,9 @@ public class DeliveryDetailsGatewayJDBCTest {
 		assertTrue(deliveryDetailsGateway.saveDeliveryDetails(delivery) > 0);
 	}
 	
+	@Test
+	public void testCanGetDeliveryDetailsById() {
+		DeliveryDetails deliveryDetails = deliveryDetailsGateway.getDeliveryDetailsById(1);
+		assertEquals(deliveryDetails.id, 1);
+	}
 }
