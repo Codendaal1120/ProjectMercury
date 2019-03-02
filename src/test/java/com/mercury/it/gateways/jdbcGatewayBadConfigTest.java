@@ -1,17 +1,16 @@
-package com.mercury.it.gateways.jdbc;
+package com.mercury.it.gateways;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
+import static org.junit.Assert.assertFalse;
 import com.mercury.gateways.Gateway;
 import com.mercury.gateways.jdbc.ProductGatewayJDBC;
+import org.junit.Before;
+import org.junit.Test;
 
 public class jdbcGatewayBadConfigTest {
 	
 	private Gateway productGateway;
 	
-	@BeforeEach
+	@Before
 	public void setUp() {
 		productGateway = new ProductGatewayJDBC("nonexistantfile");
 	}	

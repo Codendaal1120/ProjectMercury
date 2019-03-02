@@ -1,7 +1,8 @@
 package com.mercury.it.gateways.jdbc;
 
 import org.junit.BeforeClass;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
 import com.mercury.gateways.OfferTermsGateway;
 import com.mercury.gateways.jdbc.OfferTermsGwatewayJDBC;
 

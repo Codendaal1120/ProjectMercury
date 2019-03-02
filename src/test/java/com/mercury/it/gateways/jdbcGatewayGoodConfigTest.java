@@ -1,8 +1,9 @@
-package com.mercury.it.gateways.jdbc;
+package com.mercury.it.gateways;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 import com.mercury.gateways.Gateway;
 import com.mercury.gateways.jdbc.ProductGatewayJDBC;
@@ -11,7 +12,7 @@ public class jdbcGatewayGoodConfigTest {
 	
 	private Gateway productGateway;
 	
-	@BeforeEach
+	@Before
 	public void setUp() {
 		productGateway = new ProductGatewayJDBC("jdbc.xml");
 	}	
