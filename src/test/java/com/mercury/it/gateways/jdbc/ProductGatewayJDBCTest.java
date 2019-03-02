@@ -18,7 +18,7 @@ public class ProductGatewayJDBCTest {
 	}	
 	
 	@Test
-	public void testCanGetProducts() {
+	public void testGetProducts() {
 		ArrayList<Product> products = productGateway.getAllProducts();
 		assertTrue(products.size() > 1);
 	}

@@ -20,13 +20,13 @@ public class DeliveryDetailsGatewayJDBCTest {
 	}
 	
 	@Test
-	public void testCanSaveDeliveryDetails() {
+	public void testSaveDeliveryDetails() {
 		DeliveryDetails delivery = new DeliveryDetails(LocalDate.now(), "Some address", DeliveryDetails.DeliveryType.DELIVERY);
 		assertTrue(deliveryDetailsGateway.saveDeliveryDetails(delivery) > 0);
 	}
 	
 	@Test
-	public void testCanGetDeliveryDetailsById() {
+	public void testGetDeliveryDetailsById() {
 		DeliveryDetails deliveryDetails = deliveryDetailsGateway.getDeliveryDetailsById(1);
 		assertEquals(deliveryDetails.id, 1);
 	}

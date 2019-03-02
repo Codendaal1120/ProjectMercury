@@ -16,7 +16,8 @@ public class OfferTermsGatewayJDBCTest {
 	}
 	
 	@Test
-	public void testCanAddOfferTerms() {
+	public void testSaveOfferTerms() {
+
 		//OfferTerms newTerms = new OfferTerms(totalPrice, delivery, payment)
 	}
 	
