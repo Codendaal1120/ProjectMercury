@@ -10,9 +10,10 @@ public final class Queries {
 		public final static String getAllOffers = "SELECT * FROM tbOffers";
 	}
 	
-	public final class DeliveryDetails{
-		public final static String saveDeliveryDetails = "INSERT INTO tbDeliveryDetails (delivery_type, address, delivery_date) VALUES (?, ?, ?);";
-		public final static String getDeliveryDetailsById = "SELECT id, delivery_type, address, delivery_date FROM tbDeliveryDetails WHERE id = ?";
+	public final class OfferTerms{
+		public final static String saveOfferTerms = "INSERT INTO tbOfferTerms (offer_id, total_price, delivery_type, delivery_address, delivery_date, payment_type, payment_due_date) VALUES (?, ?, ?, ?, ?, ?, ?);";	
+		//SELECT id, offer_id, price_per_unit, delivery_type, delivery_address, delivery_date, payment_type, payment_due_date, payment_currency_type FROM mercury.tbOfferTerms;
+	
 	}
 	
 }

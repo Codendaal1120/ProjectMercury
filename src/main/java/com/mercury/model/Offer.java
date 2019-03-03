@@ -83,7 +83,7 @@ public abstract class Offer {
 			return acceptedBid.getPaymentType();
 		}
 		else {
-			return listedTerms.getPaymentType();
+			return listedTerms.getPaymentMethodText();
 		}
 	}
 		

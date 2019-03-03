@@ -1,21 +1,29 @@
 package com.mercury.model;
 
+import com.mercury.utilities.JsonUtility;
+
 public class OfferTerms {
 
 	private double totalPrice;
 	private DeliveryDetails delivery;
-	private Payment payment;
+	private PaymentDetails payment;
+	private long offerId;
 	//public String currency;
 	
 	/***** Functions *****/
 	
-	public OfferTerms(double totalPrice, DeliveryDetails delivery, Payment payment) {
+	public OfferTerms(long offerId, double totalPrice, DeliveryDetails delivery, PaymentDetails payment) {
 		this.totalPrice = totalPrice;
 		this.delivery = delivery;
 		this.payment = payment;
+		this.offerId = offerId;
 	}
 	
 	/***** get functions *****/
+
+	public long getOfferId(){
+		return offerId;
+	}
 
 	public double getTotalPrice() {
 		return totalPrice;
@@ -24,9 +32,17 @@ public class OfferTerms {
 	public DeliveryDetails getDelivery() {
 		return delivery;
 	}	
+
+	public PaymentDetails getPayment() {
+		return payment;
+	}
+
+	public String getPaymentMethodText() {
+		return payment.getPaymentMethodText();
+	}
 	
-	public String getPaymentType() {
-		return payment.getPaymentType();
+	public String toJsonString() {
+		return JsonUtility.objectToJson(this);		
 	}
 	
 }

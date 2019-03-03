@@ -14,14 +14,14 @@ public class DeliveryDetails {
 
 	private String address;
 	private LocalDate deliveryDate;
-	private int deliveryType;
+	private int deliveryMethod;
 	
 	/***** Functions *****/
 	
 	public DeliveryDetails(LocalDate deliveryDate, String address, int deliveryType) {
 		this.address = address;
 		this.deliveryDate = deliveryDate;
-		this.deliveryType = deliveryType;
+		this.deliveryMethod = deliveryType;
 	}
 	
 	public String toJsonString() {
@@ -39,7 +39,7 @@ public class DeliveryDetails {
 	}
 	
 	public int getDeliveryType() {
-		return deliveryType;
+		return deliveryMethod;
 	}
 	
 }

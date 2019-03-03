@@ -26,7 +26,7 @@ public class Bid {
 	}
 
 	public String getPaymentType() {
-		return terms.getPaymentType();
+		return terms.getPaymentMethodText();
 	}
 	
 }

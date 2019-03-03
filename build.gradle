@@ -9,7 +9,10 @@
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
+	 id 'application'
 }
+
+mainClassName = 'application'
 
 dependencies {
     compile 'com.google.guava:guava:23.0'

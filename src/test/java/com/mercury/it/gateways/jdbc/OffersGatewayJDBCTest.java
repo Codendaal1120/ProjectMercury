@@ -18,7 +18,7 @@ public class OffersGatewayJDBCTest {
 	}	
 	
 	@org.junit.Test
-	public void testCanGetOffers() {
+	public void testCanGetAllOffers() {
 		ArrayList<Offer> offers = offersGateway.getAllOffers();
 		assertTrue(offers.size() > 1);
 	}
