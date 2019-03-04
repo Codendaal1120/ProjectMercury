@@ -20,14 +20,14 @@ public abstract class Offer {
 	private double quantity;
 	private int Status = OfferStatus.NEW;	
 	private LocalDateTime dueDate;	
-	private OfferTerms listedTerms;
+	private Terms listedTerms;
 	private Bid acceptedBid;
 	private Product product;
 	private String unit = "\u2113";
 	
 	/***** Functions *****/
 	
-	public Offer(Product product, OfferTerms listedTerms, LocalDateTime dueDate, double quantity) {
+	public Offer(Product product, Terms listedTerms, LocalDateTime dueDate, double quantity) {
 		this.product = product;
 		this.listedTerms = listedTerms;
 		this.dueDate = dueDate;

@@ -7,7 +7,7 @@ public abstract class PaymentDetails {
 	public static final class PaymentType{
 		public static final int CASH = 1;
 		public static final int LETTER_OF_CREDIT = 2;
-		public static final int CREDIT = 1;	
+		public static final int CREDIT = 3;	
 	}
 
 	public String currency = "USD";

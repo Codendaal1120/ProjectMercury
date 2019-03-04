@@ -6,9 +6,9 @@ public class Bid {
 	public long ownerId;
 	
 	private long offerId;
-	private OfferTerms terms;
+	private Terms terms;
 	
-	public Bid(OfferTerms terms, long offerId) {
+	public Bid(Terms terms, long offerId) {
 		this.terms = terms; 
 		this.offerId = offerId;
 	}
