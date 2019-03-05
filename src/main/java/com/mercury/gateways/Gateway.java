@@ -4,8 +4,10 @@ public abstract class Gateway {
 	
 	protected boolean configLoaded = false;
 	protected boolean databaseInitialized = false;
+	protected String config;
 	
 	public Gateway(String config) {
+		this.config = config;
 		loadConfig(config);
 	}
 	

@@ -1,9 +1,8 @@
 package com.mercury.model;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import com.mercury.utilities.DateUtility;
+import com.mercury.utilities.JsonUtility;
 
 public abstract class Offer {
 	
@@ -15,7 +14,7 @@ public abstract class Offer {
 		public static final int CLOSED = 4;	
 	}	
 	
-	public long ownerId;	
+	private long ownerId;	
 	private long id;
 	private double quantity;
 	private int Status = OfferStatus.NEW;	
@@ -26,8 +25,14 @@ public abstract class Offer {
 	private String unit = "\u2113";
 	
 	/***** Functions *****/
+
+	public Offer(Product product, Terms listedTerms, LocalDateTime dueDate, double quantity, long ownerId, Bid accepteBid) {
+		this(product, listedTerms, dueDate, quantity, ownerId);
+		this.acceptedBid = accepteBid;		
+	}
 	
-	public Offer(Product product, Terms listedTerms, LocalDateTime dueDate, double quantity) {
+	public Offer(Product product, Terms listedTerms, LocalDateTime dueDate, double quantity, long ownerId) {
+		this.ownerId = ownerId;
 		this.product = product;
 		this.listedTerms = listedTerms;
 		this.dueDate = dueDate;
@@ -37,6 +42,10 @@ public abstract class Offer {
 	public void acceptBid(Bid acceptedBid) {
 		this.acceptedBid = acceptedBid;
 		this.Status = OfferStatus.CLOSED;
+	}
+
+	public String toJsonString(){
+		return JsonUtility.objectToJson(this);
 	}
 	
 	/***** Boolean functions *****/
@@ -49,6 +58,10 @@ public abstract class Offer {
 	
 	public long getId() {
 		return id;
+	}
+
+	public long getOwnerId(){
+		return ownerId;
 	}
 	
 	public double getUnitPrice() {
@@ -66,25 +79,6 @@ public abstract class Offer {
 	
 	public double getQuantity() {
 		return this.quantity;
-	}
-	
-	public String getTimeRemaining() {
-		if (isExpired()) {
-			return DateUtility.TimeDiffrenceHoursMinutes(dueDate, LocalDateTime.now());
-		}
-		else {
-			return DateUtility.TimeDiffrenceHoursMinutes(LocalDateTime.now(), dueDate);
-			
-		}		
-	}
-	
-	public String getPaymentType() {
-		if (Status == OfferStatus.CLOSED) {
-			return acceptedBid.getPaymentType();
-		}
-		else {
-			return listedTerms.getPaymentMethodText();
-		}
 	}
 		
 	public double getFees() {
@@ -114,6 +108,29 @@ public abstract class Offer {
 			return Status;
 		}
 	}
+
+	public LocalDateTime getDueDate(){
+		return this.dueDate;
+	}
+
+	public String getTimeRemaining() {
+		if (isExpired()) {
+			return DateUtility.TimeDiffrenceHoursMinutes(dueDate, LocalDateTime.now());
+		}
+		else {
+			return DateUtility.TimeDiffrenceHoursMinutes(LocalDateTime.now(), dueDate);
+			
+		}		
+	}
+	
+	public String getPaymentType() {
+		if (Status == OfferStatus.CLOSED) {
+			return acceptedBid.getPaymentType();
+		}
+		else {
+			return listedTerms.getPaymentMethodText();
+		}
+	}
 	
 	public DeliveryDetails getDelivery() {
 		if (Status == OfferStatus.CLOSED) {
@@ -124,16 +141,16 @@ public abstract class Offer {
 		}
 	}
 	
-	public String getDeliveryAddress() {
-		return getDelivery().getAddress();
+	public Terms getListedTerms(){
+		return this.listedTerms;
 	}
-	
-	public LocalDate getDeliveryDate() {
-		return getDelivery().getDeliveryDate();
+
+	public Bid getAcceptedBid(){
+		return this.acceptedBid;
 	}
-	
-	public int getDeliveryType() {
-		return getDelivery().getDeliveryType();
+
+	public Product getProduct(){
+		return this.product;
 	}
 	
 	/***** set functions *****/

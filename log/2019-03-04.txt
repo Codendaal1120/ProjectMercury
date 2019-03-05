@@ -25,3 +25,81 @@
 2019-03-04 09:27:09,586|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get terms with id '1' [Text '2019-03-14 00:00:00' could not be parsed, unparsed text found at index 10]
 2019-03-04 09:27:34,185|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get terms with id '1' [Text '2019-03-14 00:00:00' could not be parsed, unparsed text found at index 10]
 2019-03-04 09:28:38,589|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get terms with id '1' [Text '2019-03-14 00:00:00' could not be parsed, unparsed text found at index 10]
+2019-03-04 09:43:09,121|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 09:43:09,124|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 09:43:09,124|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 09:43:09,125|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 09:43:09,125|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 09:43:09,125|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 09:43:09,126|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 09:43:09,126|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 09:43:09,157|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get terms with id '1' [Illegal operation on empty result set.]
+2019-03-04 09:43:16,961|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 09:43:16,964|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 09:43:16,964|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 09:43:16,965|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 09:43:16,965|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 09:43:16,965|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 09:43:16,966|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 09:43:16,966|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 09:43:16,997|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get terms with id '1' [Illegal operation on empty result set.]
+2019-03-04 09:43:27,310|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 09:43:27,313|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 09:43:27,313|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 09:43:27,314|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 09:43:27,315|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 09:43:27,315|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 09:43:27,315|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 09:43:27,315|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 09:43:27,346|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get terms with id '1' [Illegal operation on empty result set.]
+2019-03-04 09:51:58,673|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get terms with id '1' [Illegal operation on empty result set.]
+2019-03-04 09:52:07,840|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get terms with id '1' [Illegal operation on empty result set.]
+2019-03-04 09:52:26,910|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 09:52:26,913|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 09:52:26,913|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 09:52:26,914|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 09:52:26,914|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 09:52:26,914|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 09:52:26,915|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 09:52:26,915|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 13:55:52,103|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 13:55:52,106|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 13:55:52,106|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 13:55:52,107|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 13:55:52,107|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 13:55:52,107|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 13:55:52,108|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 13:55:52,108|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 15:50:02,090|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 15:50:02,093|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 15:50:02,093|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 15:50:02,094|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 15:50:02,095|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 15:50:02,095|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 15:50:02,095|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 15:50:02,095|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 15:50:50,657|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 15:50:50,662|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 15:50:50,662|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 15:50:50,664|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 15:50:50,665|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 15:50:50,665|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 15:50:50,666|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 15:50:50,666|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 15:59:14,250|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 15:59:14,253|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 15:59:14,253|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 15:59:14,254|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 15:59:14,255|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 15:59:14,255|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 15:59:14,255|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 15:59:14,255|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 18:14:12,416|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get offers [Column 'delivery_date' not found.]
+2019-03-04 18:14:12,468|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 18:14:12,469|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 18:14:12,469|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 18:14:12,470|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-04 18:14:12,471|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-04 18:14:12,471|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-04 18:14:12,472|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-04 18:14:12,472|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]

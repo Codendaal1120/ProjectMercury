@@ -13,7 +13,7 @@ import com.mercury.model.LetterOfCreditPayment;
 import com.mercury.model.Offer;
 import com.mercury.model.Terms;
 import com.mercury.model.PaymentDetails;
-import com.mercury.model.SellOffer;
+import com.mercury.model.BuyOffer;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,7 +27,7 @@ public class OfferTest {
 	public void setUp() {
 		futureDate = LocalDateTime.now().plus(10, ChronoUnit.DAYS);
 		pastDate = LocalDateTime.now().plus(-10, ChronoUnit.DAYS);
-		testOffer = new SellOffer(null, null, futureDate, 0);
+		testOffer = new BuyOffer(null, null, futureDate, 0, 0);
 	}
 	
 	@Test
@@ -44,13 +44,13 @@ public class OfferTest {
 	@Test
 	public void testAcceptingBidShouldChangeStatus() {
 		testOffer.setId(1);
-		testOffer.acceptBid(new Bid(new Terms(0, null, null), testOffer.getId()));
+		testOffer.acceptBid(new Bid(new Terms(0, null, null), testOffer.getId(), 0));
 		assertEquals(Offer.OfferStatus.CLOSED, testOffer.getStatus());		
 	}
 	
 	@Test
 	public void testOfferShouldBeExpired() {
-		testOffer = new SellOffer(null, null, pastDate, 0);
+		testOffer = new BuyOffer(null, null, pastDate, 0, 0);
 		assertTrue(testOffer.isExpired());
 	}
 	
@@ -67,7 +67,7 @@ public class OfferTest {
 	@Test
 	public void testOfferPricePerUnit() {	
 		Terms testTerms = new Terms(760, null, null);
-		Offer testOffer = new SellOffer(null, testTerms, futureDate, 200.00);
+		Offer testOffer = new BuyOffer(null, testTerms, futureDate, 200.00, 0);
 		assertEquals(3.8, testOffer.getUnitPrice(), 0.0d);		
 	}
 	
@@ -94,11 +94,11 @@ public class OfferTest {
 	@Test
 	public void testAcceptingBidShouldChangePrice() {
 		Terms originalTerms = new Terms(10000, null, null);
-		testOffer = new SellOffer(null, originalTerms, futureDate, 0);
+		testOffer = new BuyOffer(null, originalTerms, futureDate, 0, 0);
 		testOffer.setId(1);
 		
 		Terms bidTerms = new Terms(50000, null, null);
-		Bid testBid = new Bid(bidTerms, testOffer.getId());
+		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
 		testOffer.acceptBid(testBid);
 		
 		assertEquals(50000, testOffer.getTotalPrice(), 0.0d);
@@ -110,15 +110,15 @@ public class OfferTest {
 		
 		DeliveryDetails originalDelivery = new DeliveryDetails(null, "Some address", 0);
 		Terms originalTerms = new Terms(0, originalDelivery, null);
-		testOffer = new SellOffer(null, originalTerms, null, 0);
+		testOffer = new BuyOffer(null, originalTerms, null, 0, 0);
 		testOffer.setId(1);
 		
 		DeliveryDetails bidDelivery = new DeliveryDetails(null, testDeliveryAddress, 0);
 		Terms bidTerms = new Terms(0, bidDelivery, null);
-		Bid testBid = new Bid(bidTerms, testOffer.getId());
+		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
 		testOffer.acceptBid(testBid);
 		
-		assertEquals(testDeliveryAddress, testOffer.getDeliveryAddress());
+		assertEquals(testDeliveryAddress, testOffer.getDelivery().getAddress());
 	}	
 	
 	@Test
@@ -127,15 +127,15 @@ public class OfferTest {
 		
 		DeliveryDetails originalDelivery = new DeliveryDetails(LocalDate.parse("2019-01-12"), null, 0);
 		Terms originalTerms = new Terms(0, originalDelivery, null);
-		testOffer = new SellOffer(null, originalTerms, futureDate, 0);
+		testOffer = new BuyOffer(null, originalTerms, futureDate, 0, 0);
 		testOffer.setId(1);
 		
 		DeliveryDetails bidDelivery = new DeliveryDetails(testDeliveryDate, null, 0);
 		Terms bidTerms = new Terms(0, bidDelivery, null);
-		Bid testBid = new Bid(bidTerms, testOffer.getId());
+		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
 		testOffer.acceptBid(testBid);
 		
-		assertTrue(testDeliveryDate.compareTo(testOffer.getDeliveryDate()) == 0);
+		assertTrue(testDeliveryDate.compareTo(testOffer.getDelivery().getDeliveryDate()) == 0);
 	}	
 	
 	@Test
@@ -144,15 +144,15 @@ public class OfferTest {
 		
 		DeliveryDetails originalDelivery = new DeliveryDetails(null, null, DeliveryDetails.DeliveryType.DELIVERY);
 		Terms originalTerms = new Terms(0, originalDelivery, null);
-		testOffer = new SellOffer(null, originalTerms, futureDate, 0);
+		testOffer = new BuyOffer(null, originalTerms, futureDate, 0, 0);
 		testOffer.setId(1);
 		
 		DeliveryDetails bidDelivery = new DeliveryDetails(null, null, testDeliveryType);
 		Terms bidTerms = new Terms(0, bidDelivery, null);
-		Bid testBid = new Bid(bidTerms, testOffer.getId());
+		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
 		testOffer.acceptBid(testBid);
 		
-		assertEquals(testDeliveryType, testOffer.getDeliveryType());
+		assertEquals(testDeliveryType, testOffer.getDelivery().getDeliveryType());
 	}	
 	
 	@Test
@@ -160,13 +160,13 @@ public class OfferTest {
 		LocalDate testPaymentDate = LocalDate.parse("2019-12-05");				
 		PaymentDetails testPayment = new CreditPayment(testPaymentDate);
 		Terms originalTerms = new Terms(0, null, testPayment);
-		testOffer = new SellOffer(null, originalTerms, null, 0);
+		testOffer = new BuyOffer(null, originalTerms, null, 0, 0);
 		testOffer.setId(1);
 		
 		LocalDate bidPaymentDate = LocalDate.parse("2019-12-07");	
 		PaymentDetails bidPayment = new LetterOfCreditPayment(bidPaymentDate);
 		Terms bidTerms = new Terms(0, null, bidPayment);
-		Bid testBid = new Bid(bidTerms, testOffer.getId());
+		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
 		testOffer.acceptBid(testBid);
 		
 		assertEquals("LC on 7 December 2019", testOffer.getPaymentType());
@@ -176,16 +176,16 @@ public class OfferTest {
 	
 	private void assertListedFees(double price, double quantity, double expectedFees) {
 		Terms testTerms = new Terms(price, null, null);
-		testOffer = new SellOffer(null, testTerms, futureDate, quantity);
+		testOffer = new BuyOffer(null, testTerms, futureDate, quantity, 0);
 		assertEquals(expectedFees, testOffer.getFees(), 0.0d);
 	}
 	
 	private void assertAcceptedFees(double price, double quantity, double fees) {
 		Terms testTerms = new Terms(price + (price * 0.10), null, null);
-		testOffer = new SellOffer(null, testTerms, futureDate, quantity);
+		testOffer = new BuyOffer(null, testTerms, futureDate, quantity, 0);
 		testOffer.setId(1);
 		Terms testBidTerms = new Terms(price, null, null);
-		testOffer.acceptBid(new Bid(testBidTerms, testOffer.getId()));		
+		testOffer.acceptBid(new Bid(testBidTerms, testOffer.getId(), 0));		
 		assertEquals(fees, testOffer.getFees(), 0.0d);
 	}
 	

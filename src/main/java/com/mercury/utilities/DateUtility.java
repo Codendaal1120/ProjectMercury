@@ -49,4 +49,9 @@ public class DateUtility {
 		return LocalDate.parse(date, dateTimeFormat);
 	}	
 
+	public static LocalDateTime StringToDateTime(String date, String format) {
+		DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern( format );
+		return LocalDateTime.parse(date, dateTimeFormat);
+	}	
+
 }

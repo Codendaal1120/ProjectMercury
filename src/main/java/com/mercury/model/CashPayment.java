@@ -7,7 +7,6 @@ public class CashPayment extends PaymentDetails {
 	
 	public CashPayment(LocalDate paymentDueDate) {
 		super(paymentDueDate);
-		this.PaymentMethod = PaymentDetails.PaymentType.CASH;
 	}
 
 	@Override

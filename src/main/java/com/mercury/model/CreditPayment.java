@@ -7,7 +7,6 @@ public class CreditPayment extends PaymentDetails{
 	
 	public CreditPayment(LocalDate paymentDueDate) {
 		super(paymentDueDate);
-		this.PaymentMethod = PaymentDetails.PaymentType.CREDIT;
 	}
 	
 	@Override

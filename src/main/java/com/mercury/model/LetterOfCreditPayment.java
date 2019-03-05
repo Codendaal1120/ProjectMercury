@@ -7,7 +7,6 @@ public class LetterOfCreditPayment extends PaymentDetails {
 	
 	public LetterOfCreditPayment(LocalDate paymentDueDate) {
 		super(paymentDueDate);
-		this.PaymentMethod = PaymentDetails.PaymentType.LETTER_OF_CREDIT;
 	}
 	
 	@Override
