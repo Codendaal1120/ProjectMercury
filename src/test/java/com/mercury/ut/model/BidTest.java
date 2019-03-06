@@ -15,7 +15,7 @@ public class BidTest {
 	public void testNullTermsShouldThowException() {
 		try{
 			new Bid(null, 0, 0);
-			fail();
+			fail("Expected exception not thrown");
 		}
 		catch (NullPointerException e){
 		}

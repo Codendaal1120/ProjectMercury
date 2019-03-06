@@ -2,6 +2,8 @@ package com.mercury.ut.model;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -13,11 +15,14 @@ import com.mercury.model.LetterOfCreditPayment;
 import com.mercury.model.Offer;
 import com.mercury.model.Terms;
 import com.mercury.model.PaymentDetails;
+import com.mercury.model.Product;
 import com.mercury.model.BuyOffer;
 import org.junit.Before;
 import org.junit.Test;
 
 public class OfferTest {
+
+	//accept bid null bid
 	
 	private LocalDateTime futureDate;
 	private LocalDateTime pastDate;
@@ -27,7 +32,16 @@ public class OfferTest {
 	public void setUp() {
 		futureDate = LocalDateTime.now().plus(10, ChronoUnit.DAYS);
 		pastDate = LocalDateTime.now().plus(-10, ChronoUnit.DAYS);
-		testOffer = new BuyOffer(null, null, futureDate, 0, 0);
+		testOffer = new BuyOffer(new Product(0, "Dummy product"), null, futureDate, 0, 0);
+	}
+
+	@Test
+	public void testNullProductShouldThrowException() {		
+		try{
+			new BuyOffer(null, null, futureDate, 0, 0);
+			fail("Expected exception not thrown");
+		}
+		catch (NullPointerException e){}
 	}
 	
 	@Test
@@ -39,6 +53,15 @@ public class OfferTest {
 	public void testOpenOfferShouldHaveOpenStatus() {		
 		testOffer.setId(1);
 		assertEquals(Offer.OfferStatus.OPEN, testOffer.getStatus());		
+	}
+
+	@Test
+	public void testAcceptingNullBidShouldThrowException(){
+		try{
+			testOffer.acceptBid(null);
+			fail("Expected exception not thrown");
+		}
+		catch (NullPointerException e){}		
 	}
 	
 	@Test

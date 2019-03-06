@@ -32,16 +32,26 @@ public abstract class Offer {
 	}
 	
 	public Offer(Product product, Terms listedTerms, LocalDateTime dueDate, double quantity, long ownerId) {
-		this.ownerId = ownerId;
-		this.product = product;
-		this.listedTerms = listedTerms;
-		this.dueDate = dueDate;
-		this.quantity = quantity;
+		if (product == null){
+			throw new NullPointerException("Product cannot be null");
+		}
+		else{
+			this.ownerId = ownerId;
+			this.product = product;
+			this.listedTerms = listedTerms;
+			this.dueDate = dueDate;
+			this.quantity = quantity;
+		}		
 	}
 	
 	public void acceptBid(Bid acceptedBid) {
-		this.acceptedBid = acceptedBid;
-		this.Status = OfferStatus.CLOSED;
+		if (acceptedBid == null){
+			throw new NullPointerException("Cannot accept a null Bid");
+		}
+		else{
+			this.acceptedBid = acceptedBid;
+			this.Status = OfferStatus.CLOSED;
+		}	
 	}
 
 	public String toJsonString(){
