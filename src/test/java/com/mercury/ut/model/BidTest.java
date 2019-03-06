@@ -17,8 +17,7 @@ public class BidTest {
 			new Bid(null, 0, 0);
 			fail("Expected exception not thrown");
 		}
-		catch (NullPointerException e){
-		}
+		catch (NullPointerException e){}
 	}
 	
 }

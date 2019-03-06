@@ -8,14 +8,21 @@ public class Terms {
 	private double totalPrice;
 	private DeliveryDetails delivery;
 	private PaymentDetails payment;
-	//public String currency;
-	
+
 	/***** Functions *****/
 	
 	public Terms(double totalPrice, DeliveryDetails delivery, PaymentDetails payment) {
-		this.totalPrice = totalPrice;
-		this.delivery = delivery;
-		this.payment = payment;
+		if (delivery == null){
+			throw new NullPointerException("DeliveryDetails cannot be null");
+		}
+		else if (payment == null){
+			throw new NullPointerException("PaymentDetails cannot be null");
+		}
+		else{
+			this.totalPrice = totalPrice;
+			this.delivery = delivery;
+			this.payment = payment;
+		}		
 	}
 	
 	/***** get functions *****/
