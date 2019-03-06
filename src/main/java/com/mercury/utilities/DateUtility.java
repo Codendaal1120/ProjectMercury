@@ -35,7 +35,15 @@ public class DateUtility {
 		long diffInSecondsTotal = duration.getSeconds();		   
 		long diffInHours = diffInSecondsTotal / (60 * 60);
 		long diffInMinutes = (diffInSecondsTotal - (diffInHours * 60 *60)) / 60;
-		
+		if (diffInSecondsTotal - (diffInHours * 3600) - (diffInMinutes * 60) > 50){
+			if (diffInMinutes == 59){
+				diffInMinutes = 0;
+				diffInHours++;
+			}
+			else{
+				diffInMinutes++;
+			}			
+		}
 		return diffInHours + ":" + diffInMinutes;
 	}
 	
