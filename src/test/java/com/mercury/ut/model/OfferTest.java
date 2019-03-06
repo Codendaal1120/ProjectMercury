@@ -3,17 +3,18 @@ package com.mercury.ut.model;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import com.mercury.gateways.TermsGateway;
 import com.mercury.model.Bid;
 import com.mercury.model.CreditPayment;
 import com.mercury.model.DeliveryDetails;
 import com.mercury.model.LetterOfCreditPayment;
 import com.mercury.model.Offer;
 import com.mercury.model.Terms;
+import com.mercury.ut.mocks.mockTermsGateway;
 import com.mercury.model.PaymentDetails;
 import com.mercury.model.Product;
 import com.mercury.model.BuyOffer;
@@ -22,27 +23,40 @@ import org.junit.Test;
 
 public class OfferTest {
 
-	//accept bid null bid
-	
 	private LocalDateTime futureDate;
 	private LocalDateTime pastDate;
-	private Offer testOffer;
+	private TermsGateway termsGateway;
+	private Offer testOffer;	
+	private Product testProduct;
+	private Terms testTerms;
 	
 	@Before
 	public void setUp() {
 		futureDate = LocalDateTime.now().plus(10, ChronoUnit.DAYS);
 		pastDate = LocalDateTime.now().plus(-10, ChronoUnit.DAYS);
-		testOffer = new BuyOffer(new Product(0, "Dummy product"), null, futureDate, 0, 0);
+		testProduct = new Product(0, "Test product");
+		termsGateway = new mockTermsGateway("duymmy.confg");
+		testTerms = termsGateway.getTermsById(1);				
+		testOffer = new BuyOffer(testProduct, testTerms, futureDate, 0, 0);
 	}
 
 	@Test
 	public void testNullProductShouldThrowException() {		
 		try{
-			new BuyOffer(null, null, futureDate, 0, 0);
+			new BuyOffer(null, testTerms, futureDate, 0, 0);
 			fail("Expected exception not thrown");
 		}
 		catch (NullPointerException e){}
 	}
+
+	@Test
+	public void testNullListedTermsShouldThrowException() {		
+		try{
+			new BuyOffer(testProduct, null, futureDate, 0, 0);
+			fail("Expected exception not thrown");
+		}
+		catch (NullPointerException e){}
+	}	
 	
 	@Test
 	public void testNewOfferShouldHaveNewStatus() {		
@@ -73,7 +87,7 @@ public class OfferTest {
 	
 	@Test
 	public void testOfferShouldBeExpired() {
-		testOffer = new BuyOffer(null, null, pastDate, 0, 0);
+		testOffer = new BuyOffer(testProduct, testTerms, pastDate, 0, 0);
 		assertTrue(testOffer.isExpired());
 	}
 	
@@ -89,8 +103,8 @@ public class OfferTest {
 	
 	@Test
 	public void testOfferPricePerUnit() {	
-		Terms testTerms = new Terms(760, null, null);
-		Offer testOffer = new BuyOffer(null, testTerms, futureDate, 200.00, 0);
+		Terms newTerms = new Terms(760, testTerms.getDelivery(), testTerms.getPayment());
+		Offer testOffer = new BuyOffer(testProduct, newTerms, futureDate, 200.00, 0);
 		assertEquals(3.8, testOffer.getUnitPrice(), 0.0d);		
 	}
 	
@@ -116,65 +130,52 @@ public class OfferTest {
 	
 	@Test
 	public void testAcceptingBidShouldChangePrice() {
-		Terms originalTerms = new Terms(10000, null, null);
-		testOffer = new BuyOffer(null, originalTerms, futureDate, 0, 0);
-		testOffer.setId(1);
-		
-		Terms bidTerms = new Terms(50000, null, null);
+		Terms originalTerms = new Terms(10000, testTerms.getDelivery(), testTerms.getPayment());
+		testOffer = new BuyOffer(testProduct, originalTerms, futureDate, 0, 0);
+		testOffer.setId(1);		
+		Terms bidTerms = new Terms(50000, testTerms.getDelivery(), testTerms.getPayment());
 		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
-		testOffer.acceptBid(testBid);
-		
+		testOffer.acceptBid(testBid);		
 		assertEquals(50000, testOffer.getTotalPrice(), 0.0d);
 	}	
 	
 	@Test
 	public void testAcceptingBidShouldChangeDeliveryAddress(){
-		String testDeliveryAddress = "Some other address";		
-		
-		DeliveryDetails originalDelivery = new DeliveryDetails(null, "Some address", 0);
-		Terms originalTerms = new Terms(0, originalDelivery, null);
-		testOffer = new BuyOffer(null, originalTerms, null, 0, 0);
-		testOffer.setId(1);
-		
-		DeliveryDetails bidDelivery = new DeliveryDetails(null, testDeliveryAddress, 0);
-		Terms bidTerms = new Terms(0, bidDelivery, null);
+		String testDeliveryAddress = "testAcceptingBidShouldChangeDeliveryAddress";		
+		DeliveryDetails bidDelivery = new DeliveryDetails(null, testDeliveryAddress, 0);	
+		testOffer = new BuyOffer(testProduct, testTerms, null, 0, 0);
+		testOffer.setId(1);				
+		Terms bidTerms = new Terms(0, bidDelivery, testTerms.getPayment());
 		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
-		testOffer.acceptBid(testBid);
-		
+		testOffer.acceptBid(testBid);		
 		assertEquals(testDeliveryAddress, testOffer.getDelivery().getAddress());
 	}	
 	
 	@Test
 	public void testAcceptingBidShouldChangeDeliveryDate() throws ParseException {
-		LocalDate testDeliveryDate = LocalDate.parse("2019-12-05");			
-		
+		LocalDate testDeliveryDate = LocalDate.parse("2019-12-05");		
 		DeliveryDetails originalDelivery = new DeliveryDetails(LocalDate.parse("2019-01-12"), null, 0);
-		Terms originalTerms = new Terms(0, originalDelivery, null);
-		testOffer = new BuyOffer(null, originalTerms, futureDate, 0, 0);
-		testOffer.setId(1);
-		
+		Terms originalTerms = new Terms(0, originalDelivery, testTerms.getPayment());
+		testOffer = new BuyOffer(testProduct, originalTerms, futureDate, 0, 0);
+		testOffer.setId(1);		
 		DeliveryDetails bidDelivery = new DeliveryDetails(testDeliveryDate, null, 0);
-		Terms bidTerms = new Terms(0, bidDelivery, null);
+		Terms bidTerms = new Terms(0, bidDelivery, testTerms.getPayment());
 		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
-		testOffer.acceptBid(testBid);
-		
+		testOffer.acceptBid(testBid);		
 		assertTrue(testDeliveryDate.compareTo(testOffer.getDelivery().getDeliveryDate()) == 0);
 	}	
 	
 	@Test
 	public void testAcceptingBidShouldChangeDeliveryType() {
-		int testDeliveryType = DeliveryDetails.DeliveryType.PICKUP;
-		
+		int testDeliveryType = DeliveryDetails.DeliveryType.PICKUP;		
 		DeliveryDetails originalDelivery = new DeliveryDetails(null, null, DeliveryDetails.DeliveryType.DELIVERY);
-		Terms originalTerms = new Terms(0, originalDelivery, null);
-		testOffer = new BuyOffer(null, originalTerms, futureDate, 0, 0);
-		testOffer.setId(1);
-		
+		Terms originalTerms = new Terms(0, originalDelivery, testTerms.getPayment());
+		testOffer = new BuyOffer(testProduct, originalTerms, futureDate, 0, 0);
+		testOffer.setId(1);		
 		DeliveryDetails bidDelivery = new DeliveryDetails(null, null, testDeliveryType);
-		Terms bidTerms = new Terms(0, bidDelivery, null);
+		Terms bidTerms = new Terms(0, bidDelivery, testTerms.getPayment());
 		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
-		testOffer.acceptBid(testBid);
-		
+		testOffer.acceptBid(testBid);		
 		assertEquals(testDeliveryType, testOffer.getDelivery().getDeliveryType());
 	}	
 	
@@ -182,32 +183,30 @@ public class OfferTest {
 	public void testAcceptingBidShouldChangePaymentType() throws ParseException {
 		LocalDate testPaymentDate = LocalDate.parse("2019-12-05");				
 		PaymentDetails testPayment = new CreditPayment(testPaymentDate);
-		Terms originalTerms = new Terms(0, null, testPayment);
-		testOffer = new BuyOffer(null, originalTerms, null, 0, 0);
-		testOffer.setId(1);
-		
+		Terms originalTerms = new Terms(0, testTerms.getDelivery(), testPayment);
+		testOffer = new BuyOffer(testProduct, originalTerms, null, 0, 0);
+		testOffer.setId(1);		
 		LocalDate bidPaymentDate = LocalDate.parse("2019-12-07");	
 		PaymentDetails bidPayment = new LetterOfCreditPayment(bidPaymentDate);
-		Terms bidTerms = new Terms(0, null, bidPayment);
+		Terms bidTerms = new Terms(0, testTerms.getDelivery(), bidPayment);
 		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
-		testOffer.acceptBid(testBid);
-		
+		testOffer.acceptBid(testBid);		
 		assertEquals("LC on 7 December 2019", testOffer.getPaymentType());
 	}	
 	
 	/***** Private functions *****/
 	
 	private void assertListedFees(double price, double quantity, double expectedFees) {
-		Terms testTerms = new Terms(price, null, null);
-		testOffer = new BuyOffer(null, testTerms, futureDate, quantity, 0);
+		Terms newTerms = new Terms(price, testTerms.getDelivery(), testTerms.getPayment());
+		testOffer = new BuyOffer(testProduct, newTerms, futureDate, quantity, 0);
 		assertEquals(expectedFees, testOffer.getFees(), 0.0d);
 	}
 	
 	private void assertAcceptedFees(double price, double quantity, double fees) {
-		Terms testTerms = new Terms(price + (price * 0.10), null, null);
-		testOffer = new BuyOffer(null, testTerms, futureDate, quantity, 0);
+		Terms newTerms = new Terms(price + (price * 0.10), testTerms.getDelivery(), testTerms.getPayment());
+		testOffer = new BuyOffer(testProduct, newTerms, futureDate, quantity, 0);
 		testOffer.setId(1);
-		Terms testBidTerms = new Terms(price, null, null);
+		Terms testBidTerms = new Terms(price, testTerms.getDelivery(), testTerms.getPayment());
 		testOffer.acceptBid(new Bid(testBidTerms, testOffer.getId(), 0));		
 		assertEquals(fees, testOffer.getFees(), 0.0d);
 	}

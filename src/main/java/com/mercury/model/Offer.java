@@ -35,6 +35,9 @@ public abstract class Offer {
 		if (product == null){
 			throw new NullPointerException("Product cannot be null");
 		}
+		else if (listedTerms == null){
+			throw new NullPointerException("ListedTerms cannot be null");
+		}
 		else{
 			this.ownerId = ownerId;
 			this.product = product;
@@ -45,6 +48,7 @@ public abstract class Offer {
 	}
 	
 	public void acceptBid(Bid acceptedBid) {
+		//TODO: test terms and listed cannot be equal
 		if (acceptedBid == null){
 			throw new NullPointerException("Cannot accept a null Bid");
 		}
