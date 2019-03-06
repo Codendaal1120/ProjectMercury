@@ -8,9 +8,14 @@ public class Bid {
 	private Terms terms;
 	
 	public Bid(Terms terms, long offerId, long ownerId) {
-		this.terms = terms; 
 		this.offerId = offerId;
 		this.ownerId = ownerId;
+		if (terms == null){
+			throw new NullPointerException("Terms cannot be null");
+		}
+		else{
+			this.terms = terms; 
+		}
 	}
 
 	/***** get functions *****/
