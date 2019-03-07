@@ -6,6 +6,7 @@ import com.mercury.model.Offer;
 import com.mercury.model.Product;
 import com.mercury.model.SellOffer;
 import com.mercury.model.Terms;
+import com.mercury.ut.gateways.jdbc.ProductGatewayJDBCTest;
 import com.mercury.utilities.RandomUtility;
 import com.mercury.model.BuyOffer;
 import com.mercury.gateways.Gateway;
@@ -13,12 +14,13 @@ import com.mercury.gateways.OffersGateway;
 
 public class mockOffersGateway extends Gateway implements OffersGateway {
 	
-	private Product[] products = { new Product(1, "50 PPM Diesel/Gas oil (Premium)"), new Product(2, "500 PPM Diesel/Gas oil (HSE)"), new Product(3, "HFO"), new Product(4, "95  RON MOGAS/Petrolium") };
+	private mockProductGateway productGateway;
 	private mockTermsGateway termsGateway;
 
 	public mockOffersGateway(String config) {
 		super(config);
 		termsGateway = new mockTermsGateway(config);	
+		productGateway = new mockProductGateway(config);
 	}
 
 	@Override
@@ -47,15 +49,11 @@ public class mockOffersGateway extends Gateway implements OffersGateway {
 	}
 
 	public Offer getRandomOffer(){
-		return createRandomOffer(RandomUtility.getRandomInt(1, 2), getRandomProduct(), termsGateway.getRandomTerms(), RandomUtility.getRandomDateTime(), RandomUtility.getRandomDouble(1.00, 1000.00), RandomUtility.getRandomLong(1, 50));
+		return createRandomOffer(RandomUtility.getRandomInt(1, 2), productGateway.getRandomProduct(), termsGateway.getRandomTerms(), RandomUtility.getRandomDateTime(), RandomUtility.getRandomDouble(1.00, 1000.00), RandomUtility.getRandomLong(1, 50));
 	}
 
 	public Offer getRandomOffer(Terms listedTerms){
-		return createRandomOffer(RandomUtility.getRandomInt(1, 2), getRandomProduct(), listedTerms, RandomUtility.getRandomDateTime(), RandomUtility.getRandomDouble(1.00, 1000.00), RandomUtility.getRandomLong(1, 50));
-	}
-
-	public Product getRandomProduct(){
-		return products[RandomUtility.getRandomInt(0, products.length-1)];
+		return createRandomOffer(RandomUtility.getRandomInt(1, 2), productGateway.getRandomProduct(), listedTerms, RandomUtility.getRandomDateTime(), RandomUtility.getRandomDouble(1.00, 1000.00), RandomUtility.getRandomLong(1, 50));
 	}
 
 	private Offer createRandomOffer(int OfferType, Product product, Terms listedTerms,  LocalDateTime dueDate, double Quantity, long ownerId ){

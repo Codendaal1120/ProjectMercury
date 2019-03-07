@@ -3,11 +3,14 @@ package com.mercury.it.mocks;
 import java.util.ArrayList;
 
 import com.mercury.model.Product;
+import com.mercury.utilities.RandomUtility;
 import com.mercury.gateways.Gateway;
 import com.mercury.gateways.ProductGateway;
 
 public class mockProductGateway extends Gateway implements ProductGateway {
 	
+	private Product[] products = { new Product(1, "50 PPM Diesel/Gas oil (Premium)"), new Product(2, "500 PPM Diesel/Gas oil (HSE)"), new Product(3, "HFO"), new Product(4, "95  RON MOGAS/Petrolium") };
+
 	public mockProductGateway(String config) {
 		super(config);
 	}
@@ -30,6 +33,10 @@ public class mockProductGateway extends Gateway implements ProductGateway {
 	@Override
 	public boolean isInitialized() {
 		return false;
+	}
+
+	public Product getRandomProduct(){
+		return products[RandomUtility.getRandomInt(0, products.length-1)];
 	}
 	
 }

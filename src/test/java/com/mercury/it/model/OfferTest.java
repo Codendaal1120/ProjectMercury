@@ -16,10 +16,10 @@ import com.mercury.model.Terms;
 import com.mercury.exceptions.ConflictException;
 import com.mercury.it.mocks.mockBidGateway;
 import com.mercury.it.mocks.mockOffersGateway;
+import com.mercury.it.mocks.mockProductGateway;
 import com.mercury.it.mocks.mockTermsGateway;
 import com.mercury.utilities.RandomUtility;
 import com.mercury.model.PaymentDetails;
-import com.mercury.model.SellOffer;
 import com.mercury.model.BuyOffer;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +31,7 @@ public class OfferTest {
 	private mockTermsGateway termsGateway;
 	private mockBidGateway bidGateway;
 	private mockOffersGateway offerGateway;
+	private mockProductGateway productGateway;
 	private Offer testOffer;
 	
 	@Before
@@ -38,9 +39,10 @@ public class OfferTest {
 		termsGateway = new mockTermsGateway("duymmy.confg");
 		bidGateway = new mockBidGateway("dummy.config");
 		offerGateway = new mockOffersGateway("dummy.config");
+		productGateway = new mockProductGateway("dummy.config");
 		futureDate = LocalDateTime.now().plus(10, ChronoUnit.DAYS);
 		pastDate = LocalDateTime.now().plus(-10, ChronoUnit.DAYS);
-		testOffer = new BuyOffer(offerGateway.getRandomProduct(), termsGateway.getRandomTerms(), futureDate, RandomUtility.getRandomDouble(0, 1000), RandomUtility.getRandomLong(0, 10));
+		testOffer = new BuyOffer(productGateway.getRandomProduct(), termsGateway.getRandomTerms(), futureDate, RandomUtility.getRandomDouble(0, 1000), RandomUtility.getRandomLong(0, 10));
 	}
 
 	@Test
@@ -55,7 +57,7 @@ public class OfferTest {
 	@Test
 	public void testNullListedTermsShouldThrowException() {		
 		try{
-			new BuyOffer(offerGateway.getRandomProduct(), null, futureDate, 0, 0);
+			new BuyOffer(productGateway.getRandomProduct(), null, futureDate, 0, 0);
 			fail("Expected exception not thrown");
 		}
 		catch (NullPointerException e){}
@@ -63,7 +65,7 @@ public class OfferTest {
 	
 	@Test
 	public void testNewOfferShouldHaveNewStatus() {		
-		BuyOffer offer = new BuyOffer(offerGateway.getRandomProduct(), termsGateway.getRandomTerms(), futureDate, RandomUtility.getRandomDouble(0, 1000), RandomUtility.getRandomLong(0, 10));
+		BuyOffer offer = new BuyOffer(productGateway.getRandomProduct(), termsGateway.getRandomTerms(), futureDate, RandomUtility.getRandomDouble(0, 1000), RandomUtility.getRandomLong(0, 10));
 		assertEquals(Offer.OfferStatus.NEW, offer.getStatus());		
 	}
 	
@@ -104,7 +106,7 @@ public class OfferTest {
 	
 	@Test
 	public void testOfferShouldBeExpired() {
-		testOffer = new BuyOffer(offerGateway.getRandomProduct(), termsGateway.getRandomTerms(), pastDate, 0, 0);
+		testOffer = new BuyOffer(productGateway.getRandomProduct(), termsGateway.getRandomTerms(), pastDate, 0, 0);
 		assertTrue(testOffer.isExpired());
 	}
 	
@@ -121,7 +123,7 @@ public class OfferTest {
 	@Test
 	public void testOfferPricePerUnit() {	
 		Terms newTerms = termsGateway.getRandomTerms(760);
-		Offer testOffer = new BuyOffer(offerGateway.getRandomProduct(), newTerms, futureDate, 200.00, 0);
+		Offer testOffer = new BuyOffer(productGateway.getRandomProduct(), newTerms, futureDate, 200.00, 0);
 		assertEquals(3.8, testOffer.getUnitPrice(), 0.0d);		
 	}
 
@@ -129,7 +131,7 @@ public class OfferTest {
 	public void testAcceptingBidShouldChangeUnitPrice(){
 		Terms newTerms = termsGateway.getRandomTerms(500);
 		Terms bidTerms = termsGateway.getRandomTerms(760);
-		Offer testOffer = new BuyOffer(offerGateway.getRandomProduct(), newTerms, futureDate, 200.00, 0);
+		Offer testOffer = new BuyOffer(productGateway.getRandomProduct(), newTerms, futureDate, 200.00, 0);
 		testOffer.acceptBid(bidGateway.getRandomBid(bidTerms));
 		assertEquals(3.8, testOffer.getUnitPrice(), 0.0d);	
 	}
@@ -160,7 +162,7 @@ public class OfferTest {
 	
 	@Test
 	public void testAcceptingBidShouldChangePrice() {
-		testOffer = new BuyOffer(offerGateway.getRandomProduct(), termsGateway.getRandomTerms() , futureDate, 0, 0);
+		testOffer = new BuyOffer(productGateway.getRandomProduct(), termsGateway.getRandomTerms() , futureDate, 0, 0);
 		testOffer.setId(1);		
 		Terms bidTerms = termsGateway.getRandomTerms(50000.0);
 		Bid testBid = new Bid(bidTerms, testOffer.getId(), 1);
@@ -217,13 +219,13 @@ public class OfferTest {
 	
 	private void assertListedFees(double price, double quantity, double expectedFees) {
 		Terms originalTerms = termsGateway.getRandomTerms(price);
-		testOffer = new BuyOffer(offerGateway.getRandomProduct(), originalTerms, futureDate, quantity, RandomUtility.getRandomLong(1, 50));
+		testOffer = new BuyOffer(productGateway.getRandomProduct(), originalTerms, futureDate, quantity, RandomUtility.getRandomLong(1, 50));
 		assertEquals(expectedFees, testOffer.getFees(), 0.0d);
 	}
 	
 	private void assertAcceptedFees(double price, double quantity, double expectedFees) {		
 		Terms originalTerms = termsGateway.getRandomTerms(price + (price * 0.10));
-		testOffer = new BuyOffer(offerGateway.getRandomProduct(), originalTerms, futureDate, quantity, RandomUtility.getRandomLong(1, 50));
+		testOffer = new BuyOffer(productGateway.getRandomProduct(), originalTerms, futureDate, quantity, RandomUtility.getRandomLong(1, 50));
 		Terms bidTerms = termsGateway.getRandomTerms(price);
 		testOffer.acceptBid(bidGateway.getRandomBid(bidTerms));
 		assertEquals(expectedFees, testOffer.getFees(), 0.0d);

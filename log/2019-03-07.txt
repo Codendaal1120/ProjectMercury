@@ -22,3 +22,11 @@
 2019-03-07 09:27:07,078|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
 2019-03-07 09:27:07,078|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
 2019-03-07 09:27:07,078|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-07 10:30:24,750|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-07 10:30:24,753|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-07 10:30:24,754|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-07 10:30:24,754|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Config file not found (nonexistantfile)
+2019-03-07 10:30:24,755|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to parse XML config file [InputStream cannot be null]
+2019-03-07 10:30:24,755|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get values from config file [null]
+2019-03-07 10:30:24,755|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
+2019-03-07 10:30:24,755|ERROR|com.mercury.gateways.jdbc.jdbcGateway|main|Unable to get connection [The url cannot be null]
