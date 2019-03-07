@@ -56,5 +56,23 @@ public class Terms {
 	public void setId(long id){
 		this.id = id;
 	}
+
+		/***** Override functions *****/
+	
+		public boolean equals(Object obj) {
+			if (obj == null) {
+				return false;
+			}
+			else if (!Terms.class.isAssignableFrom(obj.getClass())) {
+				return false;
+			}
+			final Terms otherTerms = (Terms)obj;
+			if (otherTerms.getId() == getId()){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
 	
 }

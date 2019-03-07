@@ -1,6 +1,8 @@
 package com.mercury.model;
 
 import java.time.LocalDateTime;
+
+import com.mercury.exceptions.ConflictException;
 import com.mercury.utilities.DateUtility;
 import com.mercury.utilities.JsonUtility;
 import com.mercury.utilities.NumberUtility;
@@ -49,9 +51,11 @@ public abstract class Offer {
 	}
 	
 	public void acceptBid(Bid acceptedBid) {
-		//TODO: test terms and listed cannot be equal
 		if (acceptedBid == null){
 			throw new NullPointerException("Cannot accept a null Bid");
+		}
+		else if (acceptedBid.getTerms().equals(this.listedTerms)){
+			throw new ConflictException("Cannot accept a null Bid");
 		}
 		else{
 			this.acceptedBid = acceptedBid;
@@ -80,7 +84,12 @@ public abstract class Offer {
 	}
 	
 	public double getUnitPrice() {
-		return listedTerms.getTotalPrice() / quantity;
+		if (Status == OfferStatus.CLOSED) {
+			return acceptedBid.getTotalPrice() / quantity;
+		}
+		else {
+			return listedTerms.getTotalPrice() / quantity;
+		}
 	}
 	
 	public double getTotalPrice() {

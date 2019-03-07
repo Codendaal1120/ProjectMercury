@@ -35,6 +35,10 @@ public class Bid {
 	public double getTotalPrice() {
 		return terms.getTotalPrice();
 	}
+
+	public Terms getTerms(){
+		return terms;
+	}
 	
 	public DeliveryDetails getDelivery() {
 		return terms.getDelivery();
@@ -48,5 +52,23 @@ public class Bid {
 	
 	public void setId(long id){
 		this.id = id;
+	}
+
+	/***** Override functions *****/
+	
+	public boolean equals(Object obj) {
+		if (obj == null) {
+            return false;
+		}
+		else if (!Bid.class.isAssignableFrom(obj.getClass())) {
+            return false;
+		}
+		final Bid otherBid = (Bid)obj;
+		if (otherBid.getId() == getId()){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 }

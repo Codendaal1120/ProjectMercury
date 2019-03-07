@@ -81,7 +81,9 @@ public class mockTermsGateway extends Gateway implements TermsGateway {
 	}
 
 	private Terms createRandomTerms(double totalPrice, DeliveryDetails delivery, PaymentDetails payment){
-		return new Terms(totalPrice, delivery, payment);
+		Terms returnTerms = new Terms(totalPrice, delivery, payment);
+		returnTerms.setId(RandomUtility.getRandomLong(1, 1000000));
+		return returnTerms;
 	}
 
 	private DeliveryDetails createRandomDeliveryDetails(LocalDate deliveryDate, String address, int deliveryType){

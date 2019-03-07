@@ -42,6 +42,8 @@ public class mockBidGateway extends Gateway implements BidGateway {
 	}
 
 	private Bid createBid(Terms bidTerm, long offerId, long ownerId){
-		return new Bid(bidTerm, offerId, ownerId);
+		Bid newBid = new Bid(bidTerm, offerId, ownerId);
+		newBid.setId(RandomUtility.getRandomLong(1, 50000));
+		return newBid;
 	}
 }

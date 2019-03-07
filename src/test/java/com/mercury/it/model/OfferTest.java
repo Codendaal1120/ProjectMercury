@@ -13,6 +13,7 @@ import com.mercury.model.DeliveryDetails;
 import com.mercury.model.LetterOfCreditPayment;
 import com.mercury.model.Offer;
 import com.mercury.model.Terms;
+import com.mercury.exceptions.ConflictException;
 import com.mercury.it.mocks.mockBidGateway;
 import com.mercury.it.mocks.mockOffersGateway;
 import com.mercury.it.mocks.mockTermsGateway;
@@ -81,6 +82,18 @@ public class OfferTest {
 		}
 		catch (NullPointerException e){}		
 	}
+
+	@Test
+	public void testAcceptBidTermsIsSameAsListedTermsShouldFail(){
+		try{
+			Terms testTerms = termsGateway.getRandomTerms();
+			testOffer = offerGateway.getRandomOffer(testTerms);
+			Bid testBid = bidGateway.getRandomBid(testTerms);
+			testOffer.acceptBid(testBid);
+			fail("Expected exception not thrown");
+		}
+		catch (ConflictException e){}
+	}
 	
 	@Test
 	public void testAcceptingBidShouldChangeStatus() {
@@ -110,6 +123,15 @@ public class OfferTest {
 		Terms newTerms = termsGateway.getRandomTerms(760);
 		Offer testOffer = new BuyOffer(offerGateway.getRandomProduct(), newTerms, futureDate, 200.00, 0);
 		assertEquals(3.8, testOffer.getUnitPrice(), 0.0d);		
+	}
+
+	@Test
+	public void testAcceptingBidShouldChangeUnitPrice(){
+		Terms newTerms = termsGateway.getRandomTerms(500);
+		Terms bidTerms = termsGateway.getRandomTerms(760);
+		Offer testOffer = new BuyOffer(offerGateway.getRandomProduct(), newTerms, futureDate, 200.00, 0);
+		testOffer.acceptBid(bidGateway.getRandomBid(bidTerms));
+		assertEquals(3.8, testOffer.getUnitPrice(), 0.0d);	
 	}
 	
 	@Test
