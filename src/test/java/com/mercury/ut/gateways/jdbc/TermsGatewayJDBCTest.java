@@ -1,4 +1,4 @@
-package com.mercury.it.gateways.jdbc;
+package com.mercury.ut.gateways.jdbc;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

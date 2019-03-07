@@ -1,4 +1,4 @@
-package com.mercury.ut.mocks;
+package com.mercury.it.mocks;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.mercury.ut.model;
+package com.mercury.it.model;
 
 import static org.junit.Assert.fail;
 import com.mercury.model.Bid;

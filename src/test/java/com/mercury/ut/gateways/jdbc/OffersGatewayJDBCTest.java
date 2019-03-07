@@ -1,6 +1,5 @@
-package com.mercury.it.gateways.jdbc;
+package com.mercury.ut.gateways.jdbc;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import java.time.LocalDate;
 import java.time.LocalDateTime;

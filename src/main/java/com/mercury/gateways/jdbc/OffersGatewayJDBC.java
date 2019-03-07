@@ -80,6 +80,7 @@ public class OffersGatewayJDBC extends jdbcGateway implements OffersGateway {
 
 		if (resultSet.getInt( "offer_type" ) == Offer.OfferStatus.CLOSED ){
 			Bid acceptedBid = null;
+			//TODO: load bid from gateway
 			newOffer = createOfferWithBid( resultSet.getInt("offer_type"), offerTerms, product, resultSet.getLong("owner_id"), resultSet.getDouble("qty"), DateUtility.StringToDateTime( resultSet.getString("due_date"), DateUtility.sqlDateTimeFormat ), acceptedBid );
 		}
 		else{

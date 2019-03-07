@@ -1,4 +1,4 @@
-package com.mercury.it.gateways;
+package com.mercury.ut.gateways;
 
 import static org.junit.Assert.assertFalse;
 import com.mercury.gateways.Gateway;

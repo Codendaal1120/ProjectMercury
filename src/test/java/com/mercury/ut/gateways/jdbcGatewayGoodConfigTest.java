@@ -1,4 +1,4 @@
-package com.mercury.it.gateways;
+package com.mercury.ut.gateways;
 
 import org.junit.Before;
 import org.junit.Test;
