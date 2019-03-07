@@ -113,23 +113,27 @@ public class OfferTest {
 	}
 	
 	@Test
-	public void testOfferFees() {		
-		assertListedFees(825000, 50000, 2475.0);
-		assertListedFees(200000.00, 10001, 570.0);		
-		assertListedFees(10001.00, 20001, 27.20272);
-		assertListedFees(80000.00, 30001, 217.6);
-		assertListedFees(10000.00, 50000, 25);
-		assertListedFees(1.00, 50000, 0.0025);
+	public void testOfferFees() {	
+		assertListedFees(829917, 9999, 2904.71);
+		assertListedFees(843600, 10000, 2876.68);
+		assertListedFees(2066250, 25000, 6570.68);
+		assertListedFees(4150000, 50000, 11412.50);
+		assertListedFees(4150000, 299, 0);
+		assertListedFees(1, 300, 0);
+		assertListedFees(1, 1, 0);
+		assertListedFees(2490000, 30000, 7918.20);
 	}
 	
 	@Test
 	public void testAcceptingBidShouldChangeFees() {
-		assertAcceptedFees(825000, 5000, 2475.0);
-		assertAcceptedFees(200000.00, 10001, 570.0);		
-		assertAcceptedFees(10001.00, 20001, 27.20272);
-		assertAcceptedFees(80000.00, 30001, 217.6);
-		assertAcceptedFees(10000.00, 50000, 25);
-		assertAcceptedFees(1.00, 50000, 0.0025);
+		assertAcceptedFees(829917, 9999, 2904.71);
+		assertAcceptedFees(843600, 10000, 2876.68);		
+		assertAcceptedFees(2066250, 25000, 6570.68);
+		assertAcceptedFees(4150000, 50000, 11412.50);
+		assertAcceptedFees(4150000, 299, 0);
+		assertAcceptedFees(1, 300, 0);
+		assertAcceptedFees(1, 1, 0);
+		assertAcceptedFees(2490000, 30000, 7918.20);
 	}	
 	
 	@Test
@@ -190,14 +194,14 @@ public class OfferTest {
 	/***** Private functions *****/
 	
 	private void assertListedFees(double price, double quantity, double expectedFees) {
-		Terms originalTerms = termsGateway.getRandomTerms(price + (price * 0.10));
-		testOffer = new SellOffer(offerGateway.getRandomProduct(), originalTerms, RandomUtility.getRandomDateTime(), quantity, RandomUtility.getRandomInt(1, 50));
+		Terms originalTerms = termsGateway.getRandomTerms(price);
+		testOffer = new BuyOffer(offerGateway.getRandomProduct(), originalTerms, futureDate, quantity, RandomUtility.getRandomLong(1, 50));
 		assertEquals(expectedFees, testOffer.getFees(), 0.0d);
 	}
 	
 	private void assertAcceptedFees(double price, double quantity, double expectedFees) {		
 		Terms originalTerms = termsGateway.getRandomTerms(price + (price * 0.10));
-		testOffer = offerGateway.getRandomOffer(originalTerms);
+		testOffer = new BuyOffer(offerGateway.getRandomProduct(), originalTerms, futureDate, quantity, RandomUtility.getRandomLong(1, 50));
 		Terms bidTerms = termsGateway.getRandomTerms(price);
 		testOffer.acceptBid(bidGateway.getRandomBid(bidTerms));
 		assertEquals(expectedFees, testOffer.getFees(), 0.0d);

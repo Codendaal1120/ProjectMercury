@@ -3,6 +3,7 @@ package com.mercury.model;
 import java.time.LocalDateTime;
 import com.mercury.utilities.DateUtility;
 import com.mercury.utilities.JsonUtility;
+import com.mercury.utilities.NumberUtility;
 
 public abstract class Offer {
 	
@@ -100,11 +101,14 @@ public abstract class Offer {
 		if (getQuantity() >= 50000.00) {
 			return getAbove50kFee();
 		}
-		else if (getQuantity() >= 20000.00) {
-			return getAbove20kFee();
+		else if (getQuantity() >= 25000.00) {
+			return getAbove25kFee();
 		}
 		else if (getQuantity() >= 10000.00) {
 			return getAbove10kFee();
+		}
+		else if (getQuantity() < 300){
+			return 0;
 		}
 		else {
 			return getStandardFee();
@@ -183,19 +187,19 @@ public abstract class Offer {
 	/***** private functions *****/
 
 	private double getAbove10kFee() {
-		return ((getTotalPrice() * 0.3) * 0.0025) + ((getTotalPrice() * 0.7) * 0.003);
+		return NumberUtility.Round(((getTotalPrice() * 0.3) * 0.0032) + ((getTotalPrice() * 0.7) * 0.0035), 2);
 	}
 	
-	private double getAbove20kFee() {
-		return ((getTotalPrice() * 0.4) * 0.0023) + ((getTotalPrice() * 0.6) * 0.003);
+	private double getAbove25kFee() {
+		return NumberUtility.Round(((getTotalPrice() * 0.4) * 0.0027) + ((getTotalPrice() * 0.6) * 0.0035), 2);
 	}
 	
 	private double getAbove50kFee() {
-		return ((getTotalPrice() * 0.5) * 0.002) + ((getTotalPrice() * 0.5) * 0.003);
+		return NumberUtility.Round(((getTotalPrice() * 0.5) * 0.002) + ((getTotalPrice() * 0.5) * 0.0035), 2);
 	}
 	
 	private double getStandardFee() {
-		return getTotalPrice() * 0.003;
+		return NumberUtility.Round(getTotalPrice() * 0.0035, 2);
 	}
 	
 }
